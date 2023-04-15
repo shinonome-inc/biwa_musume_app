@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 class GradientButton extends StatelessWidget {
   final String buttonText;
-  final Function onPressed;
+  final VoidCallback onPressed;
 
   GradientButton({required this.buttonText, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all<Color>(Color(0xffE1F0FF)),
         elevation: MaterialStateProperty.all<double>(6),
