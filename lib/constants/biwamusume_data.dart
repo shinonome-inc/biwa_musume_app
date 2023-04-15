@@ -1,0 +1,38 @@
+import 'package:biwa_musume_app/models/biwamusume.dart';
+
+class BiwamusumeData {
+  List<Biwamusume> biwamusumeList = [
+    const Biwamusume(name: 'ニゴイ', imagePath: 'assets/images/ニゴイ'),
+    const Biwamusume(name: 'ドジョウ', imagePath: 'assets/images/ドジョウ'),
+    const Biwamusume(name: 'イワトコナマズ', imagePath: 'assets/images/イワトコナマズ'),
+    const Biwamusume(name: 'ハクレン', imagePath: 'assets/images/ハクレン'),
+    const Biwamusume(name: 'ビワコオオナマズ', imagePath: 'assets/images/ビワコオオナマズ'),
+    const Biwamusume(name: 'オオクチバス', imagePath: 'assets/images/オオクチバス'),
+    const Biwamusume(name: 'ハス', imagePath: 'assets/images/ハス'),
+    const Biwamusume(name: 'ユアユ', imagePath: 'assets/images/ユアユ'),
+    const Biwamusume(name: 'イサザ', imagePath: 'assets/images/イサザ'),
+    const Biwamusume(name: 'ニゴロブナ', imagePath: 'assets/images/ニゴロブナ'),
+    const Biwamusume(name: 'ウツセミカジカ', imagePath: 'assets/images/ウツセミカジカ'),
+    const Biwamusume(name: 'タテボシガイ', imagePath: 'assets/images/タテボシガイ'),
+    const Biwamusume(name: 'セタシジミ', imagePath: 'assets/images/セタシジミ'),
+    const Biwamusume(name: 'スジエビ', imagePath: 'assets/images/スジエビ'),
+    const Biwamusume(name: 'ウナギ', imagePath: 'assets/images/ウナギ'),
+    const Biwamusume(name: 'スッポン', imagePath: 'assets/images/スッポン'),
+    const Biwamusume(name: 'コイ', imagePath: 'assets/images/コイ'),
+    const Biwamusume(name: 'トウヨシノボリ', imagePath: 'assets/images/トウヨシノボリ'),
+    const Biwamusume(name: 'スゴモロコ', imagePath: 'assets/images/スゴモロコ'),
+    const Biwamusume(name: 'ムギツク', imagePath: 'assets/images/ムギツク'),
+    const Biwamusume(name: 'ビワマス', imagePath: 'assets/images/ビワマス'),
+    const Biwamusume(name: 'ライギョ', imagePath: 'assets/images/ライギョ'),
+    const Biwamusume(name: 'ホンモロコ', imagePath: 'assets/images/ホンモロコ'),
+    const Biwamusume(name: 'ブルーギル', imagePath: 'assets/images/ブルーギル'),
+    const Biwamusume(name: 'メダカ', imagePath: 'assets/images/メダカ'),
+    const Biwamusume(name: 'ゴリ', imagePath: 'assets/images/ゴリ'),
+    const Biwamusume(name: 'フナ', imagePath: 'assets/images/フナ'),
+    const Biwamusume(name: 'アブラヒガイ', imagePath: 'assets/images/アブラヒガイ'),
+    const Biwamusume(name: 'ビワヒガイ', imagePath: 'assets/images/ビワヒガイ'),
+    const Biwamusume(name: 'ワタカ', imagePath: 'assets/images/ワタカ'),
+    const Biwamusume(name: 'ヌマチチブ', imagePath: 'assets/images/ヌマチチブ'),
+    const Biwamusume(name: 'ワカサギ', imagePath: 'assets/images/ワカサギ'),
+  ];
+}
