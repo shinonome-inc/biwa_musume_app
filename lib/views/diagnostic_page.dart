@@ -29,9 +29,10 @@ class DiagnosticPage extends ConsumerWidget {
         context,
         MaterialPageRoute(
           builder: (context) => DiagnosticPage(
-            question: 'Q${diagnosticState.questionIndex + 2}',
-            leftText: 'Left',
-            rightText: 'Right',
+            question:
+                'Q${diagnosticState.questionIndex + 2} ${diagnosticNotifier.currentQuestion.titleText}',
+            leftText: diagnosticNotifier.currentQuestion.leftButtonText,
+            rightText: diagnosticNotifier.currentQuestion.rightButtonText,
           ),
         ),
       );
