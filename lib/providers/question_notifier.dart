@@ -21,41 +21,34 @@ class QuestionNotifier extends StateNotifier<QuestionState> {
   }
 
   void updateResultIndex(bool isRightSelection) {
+    if (!isRightSelection) {
+      return;
+    }
     switch (state.questionIndex) {
       case 0:
-        if (isRightSelection) {
-          state = state.copyWith(
-            resultIndex: state.resultIndex + 16,
-          );
-        }
+        state = state.copyWith(
+          resultIndex: state.resultIndex + 16,
+        );
         break;
       case 1:
-        if (isRightSelection) {
-          state = state.copyWith(
-            resultIndex: state.resultIndex + 8,
-          );
-        }
+        state = state.copyWith(
+          resultIndex: state.resultIndex + 8,
+        );
         break;
       case 2:
-        if (isRightSelection) {
-          state = state.copyWith(
-            resultIndex: state.resultIndex + 4,
-          );
-        }
+        state = state.copyWith(
+          resultIndex: state.resultIndex + 4,
+        );
         break;
       case 3:
-        if (isRightSelection) {
-          state = state.copyWith(
-            resultIndex: state.resultIndex + 2,
-          );
-        }
+        state = state.copyWith(
+          resultIndex: state.resultIndex + 2,
+        );
         break;
       case 4:
-        if (isRightSelection) {
-          state = state.copyWith(
-            resultIndex: state.resultIndex + 1,
-          );
-        }
+        state = state.copyWith(
+          resultIndex: state.resultIndex + 1,
+        );
         break;
       default:
         break;
