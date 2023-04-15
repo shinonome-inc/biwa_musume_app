@@ -6,6 +6,9 @@ part 'biwamusume.freezed.dart';
 class Biwamusume with _$Biwamusume {
   const factory Biwamusume({
     required String name,
-    required String imagePath,
   }) = _Biwamusume;
+}
+
+extension BiwamusumeExtension on Biwamusume {
+  String get imagePath => 'assets/images/$name.png';
 }
