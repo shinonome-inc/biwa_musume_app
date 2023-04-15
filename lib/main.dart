@@ -1,7 +1,6 @@
+import 'package:biwa_musume_app/views/top_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import 'views/diagnostic_page.dart';
 
 void main() {
   runApp(
@@ -21,11 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const DiagnosticPage(
-        question: "性格は？",
-        leftText: "活発",
-        rightText: "穏やか",
-      ),
+      home: const TopPage(),
     );
   }
 }
