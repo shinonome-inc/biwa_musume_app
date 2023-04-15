@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'diagnostic_button.dart';
+
 class DiagnosticPage extends StatelessWidget {
   final String question;
   final String leftText;
@@ -43,41 +45,11 @@ class DiagnosticPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      ElevatedButton(
-                        onPressed: leftOnPressed,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFFE1F0FF),
-                          foregroundColor: const Color(0xFF007BFF),
-                          textStyle: const TextStyle(
-                              fontWeight: FontWeight.w500, fontSize: 16),
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 16, horizontal: 32),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          elevation: 3,
-                          shadowColor: const Color(0xff00004D),
-                        ),
-                        child: Text(leftText),
-                      ),
+                      DiagnosticButton(
+                          text: leftText, onPressed: leftOnPressed),
                       const SizedBox(width: 24),
-                      ElevatedButton(
-                        onPressed: rightOnPressed,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFFE1F0FF),
-                          foregroundColor: const Color(0xFF007BFF),
-                          textStyle: const TextStyle(
-                              fontWeight: FontWeight.w500, fontSize: 16),
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 16, horizontal: 32),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          elevation: 3,
-                          shadowColor: const Color(0xff00004D),
-                        ),
-                        child: Text(rightText),
-                      ),
+                      DiagnosticButton(
+                          text: rightText, onPressed: rightOnPressed),
                     ],
                   )
                 ],
