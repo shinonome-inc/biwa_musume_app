@@ -1,4 +1,4 @@
-import 'package:biwa_musume_app/providers/question_notifier.dart';
+import 'package:biwa_musume_app/providers/diagnosis_notifier.dart';
 import 'package:biwa_musume_app/views/result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -11,11 +11,11 @@ class QuestionPage extends ConsumerWidget {
     WidgetRef ref, {
     required bool isRightSelection,
   }) {
-    final questionState = ref.read(questionProvider);
-    final questionNotifier = ref.read(questionProvider.notifier);
-    questionNotifier.updateResultIndex(isRightSelection);
-    if (questionState.questionIndex < 4) {
-      questionNotifier.increaseQuestionIndex();
+    final diagnosisState = ref.read(diagnosisProvider);
+    final diagnosisNotifier = ref.read(diagnosisProvider.notifier);
+    diagnosisNotifier.updateResultIndex(isRightSelection);
+    if (diagnosisState.questionIndex < 4) {
+      diagnosisNotifier.increaseDiagnosisIndex();
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -40,7 +40,7 @@ class QuestionPage extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Q${ref.read(questionProvider).questionIndex + 1}',
+              'Q${ref.read(diagnosisProvider).questionIndex + 1}',
               style: const TextStyle(
                 fontSize: 24.0,
               ),

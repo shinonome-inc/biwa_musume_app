@@ -1,4 +1,4 @@
-import 'package:biwa_musume_app/views/question_page.dart';
+import 'package:biwa_musume_app/views/diagnosis_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
