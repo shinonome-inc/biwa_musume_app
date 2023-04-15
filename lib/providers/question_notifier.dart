@@ -8,7 +8,8 @@ final questionProvider = StateNotifierProvider<QuestionNotifier, QuestionState>(
 );
 
 class QuestionNotifier extends StateNotifier<QuestionState> {
-  QuestionNotifier() : super(const QuestionState(questionIndex: 0));
+  QuestionNotifier()
+      : super(const QuestionState(questionIndex: 0, resultIndex: 0));
 
   void increaseQuestionIndex() {
     if (state.questionIndex > 4) {
@@ -17,6 +18,47 @@ class QuestionNotifier extends StateNotifier<QuestionState> {
     state = state.copyWith(
       questionIndex: state.questionIndex + 1,
     );
-    print('question index: ${state.questionIndex}');
+  }
+
+  void updateResultIndex(bool isRightSelection) {
+    switch (state.questionIndex) {
+      case 0:
+        if (isRightSelection) {
+          state = state.copyWith(
+            resultIndex: state.resultIndex + 16,
+          );
+        }
+        break;
+      case 1:
+        if (isRightSelection) {
+          state = state.copyWith(
+            resultIndex: state.resultIndex + 8,
+          );
+        }
+        break;
+      case 2:
+        if (isRightSelection) {
+          state = state.copyWith(
+            resultIndex: state.resultIndex + 4,
+          );
+        }
+        break;
+      case 3:
+        if (isRightSelection) {
+          state = state.copyWith(
+            resultIndex: state.resultIndex + 2,
+          );
+        }
+        break;
+      case 4:
+        if (isRightSelection) {
+          state = state.copyWith(
+            resultIndex: state.resultIndex + 1,
+          );
+        }
+        break;
+      default:
+        break;
+    }
   }
 }

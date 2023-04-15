@@ -6,5 +6,6 @@ part 'question_state.freezed.dart';
 class QuestionState with _$QuestionState {
   const factory QuestionState({
     required int questionIndex,
+    required int resultIndex,
   }) = _QuestionState;
 }

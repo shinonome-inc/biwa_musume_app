@@ -1,13 +1,15 @@
+import 'package:biwa_musume_app/providers/question_notifier.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class ResultPage extends StatelessWidget {
+class ResultPage extends ConsumerWidget {
   const ResultPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Scaffold(
       body: Center(
-        child: Text('result page'),
+        child: Text('resultIndex: ${ref.read(questionProvider).resultIndex}'),
       ),
     );
   }
