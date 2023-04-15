@@ -3,8 +3,8 @@ import 'package:biwa_musume_app/views/result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class SelectionPage extends ConsumerWidget {
-  const SelectionPage({Key? key}) : super(key: key);
+class QuestionPage extends ConsumerWidget {
+  const QuestionPage({Key? key}) : super(key: key);
 
   void _transitionToNextPage(BuildContext context, WidgetRef ref) {
     final questionState = ref.read(questionProvider);
@@ -14,7 +14,7 @@ class SelectionPage extends ConsumerWidget {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const SelectionPage(),
+          builder: (context) => const QuestionPage(),
         ),
       );
     } else {
