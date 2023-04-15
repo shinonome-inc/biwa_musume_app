@@ -1,16 +1,16 @@
-import 'package:biwa_musume_app/models/diagnosis_state.dart';
+import 'package:biwa_musume_app/models/diagnostic_state.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final diagnosisProvider =
-    StateNotifierProvider<DiagnosisNotifier, DiagnosisState>(
+final diagnosticProvider =
+    StateNotifierProvider<DiagnosticNotifier, DiagnosticState>(
   (ref) {
-    return DiagnosisNotifier();
+    return DiagnosticNotifier();
   },
 );
 
-class DiagnosisNotifier extends StateNotifier<DiagnosisState> {
-  DiagnosisNotifier()
-      : super(const DiagnosisState(questionIndex: 0, resultIndex: 0));
+class DiagnosticNotifier extends StateNotifier<DiagnosticState> {
+  DiagnosticNotifier()
+      : super(const DiagnosticState(questionIndex: 0, resultIndex: 0));
 
   void increaseDiagnosisIndex() {
     if (state.questionIndex > 4) {
