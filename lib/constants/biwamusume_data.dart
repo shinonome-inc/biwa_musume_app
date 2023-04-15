@@ -1,0 +1,38 @@
+import 'package:biwa_musume_app/models/biwamusume.dart';
+
+class BiwamusumeData {
+  List<Biwamusume> biwamusumeList = [
+    const Biwamusume(name: 'ニゴイ'),
+    const Biwamusume(name: 'ドジョウ'),
+    const Biwamusume(name: 'イワトコナマズ'),
+    const Biwamusume(name: 'ハクレン'),
+    const Biwamusume(name: 'ビワコオオナマズ'),
+    const Biwamusume(name: 'オオクチバス'),
+    const Biwamusume(name: 'ハス'),
+    const Biwamusume(name: 'ユアユ'),
+    const Biwamusume(name: 'イサザ'),
+    const Biwamusume(name: 'ニゴロブナ'),
+    const Biwamusume(name: 'ウツセミカジカ'),
+    const Biwamusume(name: 'タテボシガイ'),
+    const Biwamusume(name: 'セタシジミ'),
+    const Biwamusume(name: 'スジエビ'),
+    const Biwamusume(name: 'ウナギ'),
+    const Biwamusume(name: 'スッポン'),
+    const Biwamusume(name: 'コイ'),
+    const Biwamusume(name: 'トウヨシノボリ'),
+    const Biwamusume(name: 'スゴモロコ'),
+    const Biwamusume(name: 'ムギツク'),
+    const Biwamusume(name: 'ビワマス'),
+    const Biwamusume(name: 'ライギョ'),
+    const Biwamusume(name: 'ホンモロコ'),
+    const Biwamusume(name: 'ブルーギル'),
+    const Biwamusume(name: 'メダカ'),
+    const Biwamusume(name: 'ゴリ'),
+    const Biwamusume(name: 'フナ'),
+    const Biwamusume(name: 'アブラヒガイ'),
+    const Biwamusume(name: 'ビワヒガイ'),
+    const Biwamusume(name: 'ワタカ'),
+    const Biwamusume(name: 'ヌマチチブ'),
+    const Biwamusume(name: 'ワカサギ'),
+  ];
+}
