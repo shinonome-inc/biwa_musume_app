@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
-import 'diagnostic_page.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import 'views/diagnostic_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -15,13 +21,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Container(
-          child: DiagnosticPage(
-              question: "性格は？",
-              leftText: "活発",
-              rightText: "穏やか",
-              leftOnPressed: (() => {}),
-              rightOnPressed: (() => {}))),
+      home: const DiagnosticPage(
+        question: "性格は？",
+        leftText: "活発",
+        rightText: "穏やか",
+      ),
     );
   }
 }
