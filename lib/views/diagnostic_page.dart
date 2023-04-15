@@ -29,7 +29,7 @@ class DiagnosticPage extends ConsumerWidget {
         context,
         MaterialPageRoute(
           builder: (context) => DiagnosticPage(
-            question: 'Q${diagnosticState.questionIndex + 1}',
+            question: 'Q${diagnosticState.questionIndex + 2}',
             leftText: 'Left',
             rightText: 'Right',
           ),
