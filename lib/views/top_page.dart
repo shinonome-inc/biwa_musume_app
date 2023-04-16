@@ -1,8 +1,8 @@
 import 'package:biwa_musume_app/views/diagnostic_page.dart';
 import 'package:flutter/material.dart';
 
-import '../gradient-button.dart';
 import '../ui_components/diagnostic_button.dart';
+import '../ui_components/gradient-button.dart';
 
 class TopPage extends StatelessWidget {
   const TopPage({Key? key}) : super(key: key);

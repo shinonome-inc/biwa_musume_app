@@ -16,6 +16,7 @@ class ResultPage extends ConsumerWidget {
     final biwamusume =
         BiwamusumeData().biwamusumeList[diagnosticState.resultIndex];
     return Scaffold(
+      backgroundColor: Colors.grey,
       body: ListView(children: [
         Container(
           decoration: const BoxDecoration(
