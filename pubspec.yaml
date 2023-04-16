@@ -58,6 +58,9 @@ dev_dependencies:
 flutter:
   assets:
     - assets/diagnostic_page_background.png
+    - assets/result_page_above-bg.png
+    - assets/result_page_profile-image.png
+    - assets/result_page_under-bg.png
   uses-material-design: true
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
