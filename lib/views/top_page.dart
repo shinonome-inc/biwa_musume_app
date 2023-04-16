@@ -11,6 +11,7 @@ class TopPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
             // 画像がはみ出るが、縦横比を保ったまま画面いっぱいに画像を表示
