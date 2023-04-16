@@ -42,6 +42,7 @@ class DiagnosticPage extends ConsumerWidget {
       onWillPop: () async => false,
       child: Scaffold(
         body: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/diagnostic_page_background.png'),
@@ -67,23 +68,27 @@ class DiagnosticPage extends ConsumerWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        DiagnosticButton(
-                          text:
-                              diagnosticNotifier.currentQuestion.leftButtonText,
-                          onPressed: () => _transitionToNextPage(
-                            context,
-                            ref,
-                            isRightSelection: false,
+                        Expanded(
+                          child: DiagnosticButton(
+                            text: diagnosticNotifier
+                                .currentQuestion.leftButtonText,
+                            onPressed: () => _transitionToNextPage(
+                              context,
+                              ref,
+                              isRightSelection: false,
+                            ),
                           ),
                         ),
                         const SizedBox(width: 24),
-                        DiagnosticButton(
-                          text: diagnosticNotifier
-                              .currentQuestion.rightButtonText,
-                          onPressed: () => _transitionToNextPage(
-                            context,
-                            ref,
-                            isRightSelection: true,
+                        Expanded(
+                          child: DiagnosticButton(
+                            text: diagnosticNotifier
+                                .currentQuestion.rightButtonText,
+                            onPressed: () => _transitionToNextPage(
+                              context,
+                              ref,
+                              isRightSelection: true,
+                            ),
                           ),
                         ),
                       ],

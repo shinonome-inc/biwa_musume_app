@@ -36,7 +36,7 @@ class QuestionData {
   );
   static const Question country = Question(
     titleText: 'どちらの結婚に興味がありますか？',
-    leftButtonText: '日本人と結婚',
+    leftButtonText: '国内結婚',
     rightButtonText: '国際結婚',
   );
   static const Question height = Question(
@@ -50,9 +50,9 @@ class QuestionData {
     rightButtonText: 'のんびり',
   );
   static const Question indoorOutdoor = Question(
-    titleText: '一緒に遊ぶならどちらですか？',
-    leftButtonText: 'アウトドア派',
-    rightButtonText: 'インドア派',
+    titleText: '休日はどう過ごしたいですか？',
+    leftButtonText: 'アウトドア',
+    rightButtonText: 'インドア',
   );
   static const Question figure = Question(
     titleText: '好みの体型はどっちですか？',
