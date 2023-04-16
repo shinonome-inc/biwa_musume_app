@@ -38,7 +38,7 @@ class ResultPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final diagnosticState = ref.read(diagnosticProvider);
     final biwamusume =
-        BiwamusumeData().biwamusumeList[diagnosticState.resultIndex];
+        BiwamusumeData.biwamusumeList[diagnosticState.resultIndex];
     return Scaffold(
       body: ListView(children: [
         Container(
