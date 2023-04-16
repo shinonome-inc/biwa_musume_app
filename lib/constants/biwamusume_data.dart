@@ -1,8 +1,8 @@
 import 'package:biwa_musume_app/models/biwamusume.dart';
 
 class BiwamusumeData {
-  static List<Biwamusume> biwamusumeList = [
-    const Biwamusume(
+  static const List<Biwamusume> biwamusumeList = [
+    Biwamusume(
       name: 'ニゴイ',
       isHerb: false,
       isCalm: false,
