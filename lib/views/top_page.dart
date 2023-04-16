@@ -20,13 +20,13 @@ class TopPage extends StatelessWidget {
           ),
         ),
         child: Container(
-          margin: EdgeInsets.only(bottom: 56.0),
+          margin: const EdgeInsets.only(bottom: 56.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Image.asset('assets/logo.png'),
-              Text("全5問", style: TextStyle(fontSize: 20)),
-              SizedBox(height: 4.0),
+              const Text("全5問", style: TextStyle(fontSize: 20)),
+              const SizedBox(height: 4.0),
               GradientButton(
                 buttonText: '',
                 onPressed: () {
@@ -38,7 +38,7 @@ class TopPage extends StatelessWidget {
                   );
                 },
               ),
-              SizedBox(height: 20.0),
+              const SizedBox(height: 20.0),
               DiagnosticButton(
                 text: ("ビワ娘とは"),
                 onPressed: () {},
