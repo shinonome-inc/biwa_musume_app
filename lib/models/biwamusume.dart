@@ -16,4 +16,10 @@ class Biwamusume with _$Biwamusume {
 
 extension BiwamusumeExtension on Biwamusume {
   String get imagePath => 'assets/biwamusume/$name.png';
+
+  String get herb => isHerb ? '集団行動' : '単独行動';
+  String get calm => isHerb ? '消極的' : '積極的';
+  String get nocturnalHabit => isNocturnalHabit ? '夜行性' : '昼行性';
+  String get carnivorous => isCarnivorous ? '肉食' : '草食';
+  String get heightText => '${height}cm';
 }
