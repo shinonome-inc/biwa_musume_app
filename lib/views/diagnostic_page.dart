@@ -38,57 +38,61 @@ class DiagnosticPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final diagnosticNotifier = ref.watch(diagnosticProvider.notifier);
-    return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/diagnostic_page_background.png'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Stack(
-          children: [
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const SizedBox(height: 24),
-                  Text(
-                    diagnosticNotifier.currentQuestion.titleText,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(height: 24),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      DiagnosticButton(
-                        text: diagnosticNotifier.currentQuestion.leftButtonText,
-                        onPressed: () => _transitionToNextPage(
-                          context,
-                          ref,
-                          isRightSelection: false,
-                        ),
-                      ),
-                      const SizedBox(width: 24),
-                      DiagnosticButton(
-                        text:
-                            diagnosticNotifier.currentQuestion.rightButtonText,
-                        onPressed: () => _transitionToNextPage(
-                          context,
-                          ref,
-                          isRightSelection: true,
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/diagnostic_page_background.png'),
+              fit: BoxFit.cover,
             ),
-          ],
+          ),
+          child: Stack(
+            children: [
+              Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: 24),
+                    Text(
+                      diagnosticNotifier.currentQuestion.titleText,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
+                        color: Colors.black,
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        DiagnosticButton(
+                          text:
+                              diagnosticNotifier.currentQuestion.leftButtonText,
+                          onPressed: () => _transitionToNextPage(
+                            context,
+                            ref,
+                            isRightSelection: false,
+                          ),
+                        ),
+                        const SizedBox(width: 24),
+                        DiagnosticButton(
+                          text: diagnosticNotifier
+                              .currentQuestion.rightButtonText,
+                          onPressed: () => _transitionToNextPage(
+                            context,
+                            ref,
+                            isRightSelection: true,
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
