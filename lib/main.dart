@@ -2,6 +2,8 @@ import 'package:biwa_musume_app/views/top_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'gradient-button.dart';
+
 void main() {
   runApp(
     const ProviderScope(
