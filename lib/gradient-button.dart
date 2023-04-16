@@ -2,15 +2,19 @@ import 'package:flutter/material.dart';
 
 class GradientButton extends StatelessWidget {
   final String buttonText;
-  final Function onPressed;
+  final void Function()? onPressed;
 
-  GradientButton({required this.buttonText, required this.onPressed});
+  const GradientButton({
+    super.key,
+    required this.buttonText,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
           colors: [
@@ -19,7 +23,7 @@ class GradientButton extends StatelessWidget {
           ],
         ),
         borderRadius: BorderRadius.circular(44),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Color.fromRGBO(0, 0, 0, 0.3),
             offset: Offset(0, 6),
@@ -28,16 +32,9 @@ class GradientButton extends StatelessWidget {
         ],
       ),
       child: ElevatedButton(
-        onPressed: () {},
-        child: Text(
-          '診断スタート',
-          style: TextStyle(
-            fontSize: 24,
-            color: Colors.white,
-          ),
-        ),
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 36),
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 36),
           elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(44),
@@ -45,6 +42,13 @@ class GradientButton extends StatelessWidget {
           primary: Colors.transparent,
           onPrimary: Colors.transparent,
           shadowColor: Colors.transparent,
+        ),
+        child: const Text(
+          '診断スタート',
+          style: TextStyle(
+            fontSize: 24,
+            color: Colors.white,
+          ),
         ),
       ),
     );
