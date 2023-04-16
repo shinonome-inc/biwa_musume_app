@@ -36,8 +36,9 @@ class ResultPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final int resultIndex = ref.read(diagnosticProvider).resultIndex;
-
+    final diagnosticState = ref.read(diagnosticProvider);
+    final biwamusume =
+        BiwamusumeData().biwamusumeList[diagnosticState.resultIndex];
     return Scaffold(
       body: ListView(children: [
         Container(
@@ -68,7 +69,7 @@ class ResultPage extends ConsumerWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            '「${BiwamusumeData().biwamusumeList[resultIndex].name}」',
+                            '「${biwamusume.name}」',
                             style: const TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 20,

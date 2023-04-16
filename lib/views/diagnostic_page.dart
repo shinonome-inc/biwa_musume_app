@@ -5,15 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class DiagnosticPage extends ConsumerWidget {
-  final String question;
-  final String leftText;
-  final String rightText;
-  const DiagnosticPage({
-    super.key,
-    required this.question,
-    required this.leftText,
-    required this.rightText,
-  });
+  const DiagnosticPage({super.key});
 
   void _transitionToNextPage(
     BuildContext context,
@@ -28,11 +20,7 @@ class DiagnosticPage extends ConsumerWidget {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => DiagnosticPage(
-            question: 'Q${diagnosticState.questionIndex + 2}',
-            leftText: 'Left',
-            rightText: 'Right',
-          ),
+          builder: (context) => const DiagnosticPage(),
         ),
       );
     } else {
@@ -60,56 +48,67 @@ class DiagnosticPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/diagnostic_page_background.png'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Stack(
-          children: [
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const SizedBox(height: 24),
-                  Text(
-                    question,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(height: 24),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      DiagnosticButton(
-                        text: leftText,
-                        onPressed: () => _transitionToNextPage(
-                          context,
-                          ref,
-                          isRightSelection: false,
-                        ),
-                      ),
-                      const SizedBox(width: 24),
-                      DiagnosticButton(
-                        text: rightText,
-                        onPressed: () => _transitionToNextPage(
-                          context,
-                          ref,
-                          isRightSelection: true,
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
+    final diagnosticNotifier = ref.watch(diagnosticProvider.notifier);
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        body: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/diagnostic_page_background.png'),
+              fit: BoxFit.cover,
             ),
-          ],
+          ),
+          child: Stack(
+            children: [
+              Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: 24),
+                    Text(
+                      diagnosticNotifier.currentQuestion.titleText,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
+                        color: Colors.black,
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: DiagnosticButton(
+                            text: diagnosticNotifier
+                                .currentQuestion.leftButtonText,
+                            onPressed: () => _transitionToNextPage(
+                              context,
+                              ref,
+                              isRightSelection: false,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 24),
+                        Expanded(
+                          child: DiagnosticButton(
+                            text: diagnosticNotifier
+                                .currentQuestion.rightButtonText,
+                            onPressed: () => _transitionToNextPage(
+                              context,
+                              ref,
+                              isRightSelection: true,
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
