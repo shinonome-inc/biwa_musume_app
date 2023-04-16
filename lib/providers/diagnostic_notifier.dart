@@ -25,7 +25,7 @@ class DiagnosticNotifier extends StateNotifier<DiagnosticState> {
       case 3:
         if ([0, 8].contains(state.resultIndex)) {
           return QuestionData.season;
-        } else if ([4, 20].contains(state.resultIndex)) {
+        } else if ([4, 24].contains(state.resultIndex)) {
           return QuestionData.height;
         } else if ([12, 16, 20, 28].contains(state.resultIndex)) {
           return QuestionData.food;
@@ -46,6 +46,8 @@ class DiagnosticNotifier extends StateNotifier<DiagnosticState> {
         } else if (state.resultIndex == 14) {
           return QuestionData.figure;
         } else if (state.resultIndex == 18) {
+          return QuestionData.temperature;
+        } else if ([20, 24, 30].contains(state.resultIndex)) {
           return QuestionData.temperature;
         } else {
           return QuestionData.defaultQuestion;

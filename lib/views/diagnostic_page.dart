@@ -5,14 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class DiagnosticPage extends ConsumerWidget {
-  final String question;
-  final String leftText;
-  final String rightText;
   const DiagnosticPage({
     super.key,
-    required this.question,
-    required this.leftText,
-    required this.rightText,
   });
 
   void _transitionToNextPage(
@@ -28,12 +22,7 @@ class DiagnosticPage extends ConsumerWidget {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => DiagnosticPage(
-            question:
-                'Q${diagnosticState.questionIndex + 2} ${diagnosticNotifier.currentQuestion.titleText}',
-            leftText: diagnosticNotifier.currentQuestion.leftButtonText,
-            rightText: diagnosticNotifier.currentQuestion.rightButtonText,
-          ),
+          builder: (context) => const DiagnosticPage(),
         ),
       );
     } else {
@@ -48,6 +37,7 @@ class DiagnosticPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final diagnosticNotifier = ref.watch(diagnosticProvider.notifier);
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -64,7 +54,7 @@ class DiagnosticPage extends ConsumerWidget {
                 children: [
                   const SizedBox(height: 24),
                   Text(
-                    question,
+                    diagnosticNotifier.currentQuestion.titleText,
                     style: const TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 20,
@@ -76,7 +66,7 @@ class DiagnosticPage extends ConsumerWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       DiagnosticButton(
-                        text: leftText,
+                        text: diagnosticNotifier.currentQuestion.leftButtonText,
                         onPressed: () => _transitionToNextPage(
                           context,
                           ref,
@@ -85,7 +75,8 @@ class DiagnosticPage extends ConsumerWidget {
                       ),
                       const SizedBox(width: 24),
                       DiagnosticButton(
-                        text: rightText,
+                        text:
+                            diagnosticNotifier.currentQuestion.rightButtonText,
                         onPressed: () => _transitionToNextPage(
                           context,
                           ref,
