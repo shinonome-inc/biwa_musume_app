@@ -33,11 +33,7 @@ class TopPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const DiagnosticPage(
-                        question: 'Q1',
-                        leftText: 'Left',
-                        rightText: 'Right',
-                      ),
+                      builder: (context) => const DiagnosticPage(),
                     ),
                   );
                 },
