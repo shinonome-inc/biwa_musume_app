@@ -20,12 +20,12 @@ class QuestionData {
   );
   // 第3問（共通）
   static const Question time = Question(
-    titleText: 'デートするならどちらの時間帯がいいですか？',
+    titleText: 'デートするならいつがいいですか？',
     leftButtonText: '昼',
     rightButtonText: '夜',
   );
   static const Question season = Question(
-    titleText: '付き合うならどちらの季節がいいですか？',
+    titleText: '恋愛するならどの季節ですか？',
     leftButtonText: '夏',
     rightButtonText: '冬',
   );
@@ -35,8 +35,8 @@ class QuestionData {
     rightButtonText: '肉食系',
   );
   static const Question country = Question(
-    titleText: 'デートするならどちらの時間帯がいいですか？',
-    leftButtonText: '日本人と結婚',
+    titleText: 'どちらの結婚に興味がありますか？',
+    leftButtonText: '国内結婚',
     rightButtonText: '国際結婚',
   );
   static const Question height = Question(
@@ -50,9 +50,9 @@ class QuestionData {
     rightButtonText: 'のんびり',
   );
   static const Question indoorOutdoor = Question(
-    titleText: 'アウトドア派ですか？インドア派ですか？',
-    leftButtonText: 'アウトドア派',
-    rightButtonText: 'インドア派',
+    titleText: '休日はどう過ごしたいですか？',
+    leftButtonText: 'アウトドア',
+    rightButtonText: 'インドア',
   );
   static const Question figure = Question(
     titleText: '好みの体型はどっちですか？',
