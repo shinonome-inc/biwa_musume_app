@@ -91,6 +91,7 @@ class ResultPage extends ConsumerWidget {
             ),
             ElevatedButton(
               onPressed: () {
+                ref.read(diagnosticProvider.notifier).resetData();
                 Navigator.push(
                   context,
                   MaterialPageRoute(
