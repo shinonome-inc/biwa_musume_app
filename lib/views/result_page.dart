@@ -1,38 +1,14 @@
 import 'package:biwa_musume_app/constants/biwamusume_data.dart';
+import 'package:biwa_musume_app/models/biwamusume.dart';
 import 'package:biwa_musume_app/providers/diagnostic_notifier.dart';
+import 'package:biwa_musume_app/views/diagnostic_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../ui_components/result_page_list.dart';
 
 class ResultPage extends ConsumerWidget {
-  final String imagePath;
-  final String everydayLife;
-  final String character;
-  final String rhythmOfDailyLife;
-  final String food;
-  final String breedingSeason;
-  final String bodyLength;
-  final String origin;
-  final String bodyColor;
-  final String residence;
-  final String habitatDepth;
-  final VoidCallback onPressed;
-  const ResultPage({
-    Key? key,
-    required this.imagePath,
-    required this.everydayLife,
-    required this.character,
-    required this.rhythmOfDailyLife,
-    required this.food,
-    required this.breedingSeason,
-    required this.bodyLength,
-    required this.origin,
-    required this.bodyColor,
-    required this.residence,
-    required this.habitatDepth,
-    required this.onPressed,
-  }) : super(key: key);
+  const ResultPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -40,6 +16,7 @@ class ResultPage extends ConsumerWidget {
     final biwamusume =
         BiwamusumeData.biwamusumeList[diagnosticState.resultIndex];
     return Scaffold(
+      backgroundColor: Colors.grey,
       body: ListView(children: [
         Container(
           decoration: const BoxDecoration(
@@ -95,7 +72,7 @@ class ResultPage extends ConsumerWidget {
           ),
         ),
         Image(
-          image: AssetImage(imagePath),
+          image: AssetImage(biwamusume.imagePath),
           fit: BoxFit.cover,
         ),
         Container(
@@ -108,26 +85,23 @@ class ResultPage extends ConsumerWidget {
           child: Column(children: [
             Column(children: [
               const SizedBox(height: 20),
-              ResultPageList(
-                everydayLife: everydayLife,
-                character: character,
-                rhythmOfDailyLife: rhythmOfDailyLife,
-                food: food,
-                breedingSeason: breedingSeason,
-                bodyLength: bodyLength,
-                origin: origin,
-                bodyColor: bodyColor,
-                residence: residence,
-                habitatDepth: habitatDepth,
-              ),
+              ResultPageList(biwamusume: biwamusume),
             ]),
             const SizedBox(
               height: 24,
             ),
             ElevatedButton(
-              onPressed: onPressed,
+              onPressed: () {
+                ref.read(diagnosticProvider.notifier).resetData();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const DiagnosticPage(),
+                  ),
+                );
+              },
               style: ElevatedButton.styleFrom(
-                fixedSize: Size(350, 55),
+                fixedSize: const Size(350, 55),
                 backgroundColor: const Color(0xFFE1F0FF),
                 foregroundColor: const Color(0xFF007BFF),
                 textStyle:

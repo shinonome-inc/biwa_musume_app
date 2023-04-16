@@ -11,8 +11,11 @@ final diagnosticProvider =
 );
 
 class DiagnosticNotifier extends StateNotifier<DiagnosticState> {
-  DiagnosticNotifier()
-      : super(const DiagnosticState(questionIndex: 0, resultIndex: 0));
+  DiagnosticNotifier() : super(kDefaultDiagnosticState);
+
+  void resetData() {
+    state = kDefaultDiagnosticState;
+  }
 
   Question get currentQuestion {
     switch (state.questionIndex) {
@@ -101,3 +104,8 @@ class DiagnosticNotifier extends StateNotifier<DiagnosticState> {
     }
   }
 }
+
+const DiagnosticState kDefaultDiagnosticState = DiagnosticState(
+  questionIndex: 0,
+  resultIndex: 0,
+);

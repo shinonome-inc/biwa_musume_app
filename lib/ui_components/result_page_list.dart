@@ -1,28 +1,11 @@
+import 'package:biwa_musume_app/models/biwamusume.dart';
 import 'package:flutter/material.dart';
 
 class ResultPageList extends StatelessWidget {
-  final String everydayLife;
-  final String character;
-  final String rhythmOfDailyLife;
-  final String food;
-  final String breedingSeason;
-  final String bodyLength;
-  final String origin;
-  final String bodyColor;
-  final String residence;
-  final String habitatDepth;
+  final Biwamusume biwamusume;
   const ResultPageList({
     super.key,
-    required this.everydayLife,
-    required this.character,
-    required this.rhythmOfDailyLife,
-    required this.food,
-    required this.breedingSeason,
-    required this.bodyLength,
-    required this.origin,
-    required this.bodyColor,
-    required this.residence,
-    required this.habitatDepth,
+    required this.biwamusume,
   });
   @override
   Widget build(BuildContext context) {
@@ -37,7 +20,7 @@ class ResultPageList extends StatelessWidget {
             width: MediaQuery.of(context).size.width * 0.3,
             height: 23,
             child: const Text(
-              "日常",
+              "行動",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 16,
@@ -49,7 +32,7 @@ class ResultPageList extends StatelessWidget {
             width: MediaQuery.of(context).size.width * 0.5,
             height: 23,
             child: Text(
-              everydayLife,
+              biwamusume.herb,
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
@@ -88,7 +71,7 @@ class ResultPageList extends StatelessWidget {
             width: MediaQuery.of(context).size.width * 0.5,
             height: 23,
             child: Text(
-              character,
+              biwamusume.calm,
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
@@ -127,7 +110,7 @@ class ResultPageList extends StatelessWidget {
             width: MediaQuery.of(context).size.width * 0.5,
             height: 23,
             child: Text(
-              rhythmOfDailyLife,
+              biwamusume.nocturnalHabit,
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
@@ -166,46 +149,7 @@ class ResultPageList extends StatelessWidget {
             width: MediaQuery.of(context).size.width * 0.5,
             height: 23,
             child: Text(
-              food,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-        ]),
-        const SizedBox(height: 8),
-        Container(
-          height: 1,
-          width: MediaQuery.of(context).size.width * 0.8,
-          color: Colors.white,
-        )
-      ]),
-      Column(children: [
-        const SizedBox(height: 8),
-        Row(children: [
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.2,
-          ),
-          Container(
-            alignment: Alignment.centerLeft,
-            width: MediaQuery.of(context).size.width * 0.3,
-            height: 23,
-            child: const Text(
-              "繁殖時期",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.5,
-            height: 23,
-            child: Text(
-              breedingSeason,
+              biwamusume.carnivorous,
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
@@ -244,7 +188,7 @@ class ResultPageList extends StatelessWidget {
             width: MediaQuery.of(context).size.width * 0.5,
             height: 23,
             child: Text(
-              bodyLength,
+              biwamusume.heightText,
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
@@ -259,156 +203,6 @@ class ResultPageList extends StatelessWidget {
           width: MediaQuery.of(context).size.width * 0.8,
           color: Colors.white,
         )
-      ]),
-      Column(children: [
-        const SizedBox(height: 8),
-        Row(children: [
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.2,
-          ),
-          Container(
-            alignment: Alignment.centerLeft,
-            width: MediaQuery.of(context).size.width * 0.3,
-            height: 23,
-            child: const Text(
-              "原産",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.5,
-            height: 23,
-            child: Text(
-              origin,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-        ]),
-        SizedBox(height: 8),
-        Container(
-          height: 1,
-          width: MediaQuery.of(context).size.width * 0.8,
-          color: Colors.white,
-        )
-      ]),
-      Column(children: [
-        const SizedBox(height: 8),
-        Row(children: [
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.2,
-          ),
-          Container(
-            alignment: Alignment.centerLeft,
-            width: MediaQuery.of(context).size.width * 0.3,
-            height: 23,
-            child: const Text(
-              "体の色",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.5,
-            height: 23,
-            child: Text(
-              bodyColor,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-        ]),
-        const SizedBox(height: 8),
-        Container(
-          height: 1,
-          width: MediaQuery.of(context).size.width * 0.8,
-          color: Colors.white,
-        )
-      ]),
-      Column(children: [
-        const SizedBox(height: 8),
-        Row(children: [
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.2,
-          ),
-          Container(
-            alignment: Alignment.centerLeft,
-            width: MediaQuery.of(context).size.width * 0.3,
-            height: 23,
-            child: const Text(
-              "在住",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.5,
-            height: 23,
-            child: Text(
-              residence,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-        ]),
-        const SizedBox(height: 8),
-        Container(
-          height: 1,
-          width: MediaQuery.of(context).size.width * 0.8,
-          color: Colors.white,
-        )
-      ]),
-      Column(children: [
-        const SizedBox(height: 8),
-        Row(children: [
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.2,
-          ),
-          Container(
-            alignment: Alignment.centerLeft,
-            width: MediaQuery.of(context).size.width * 0.3,
-            height: 23,
-            child: const Text(
-              "生息水深",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.5,
-            height: 23,
-            child: Text(
-              habitatDepth,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-        ]),
       ]),
     ]);
   }
