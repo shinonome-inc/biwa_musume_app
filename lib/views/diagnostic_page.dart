@@ -27,20 +27,7 @@ class DiagnosticPage extends ConsumerWidget {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => ResultPage(
-            imagePath: "assets/result_page_profile-image.png",
-            everydayLife: "単独行動",
-            character: "単独行動",
-            rhythmOfDailyLife: "単独行動",
-            food: "単独行動",
-            breedingSeason: "単独行動",
-            bodyLength: "単独行動",
-            origin: "単独行動",
-            bodyColor: "単独行動",
-            residence: "単独行動",
-            habitatDepth: "単独行動",
-            onPressed: (() => {}),
-          ),
+          builder: (context) => const ResultPage(),
         ),
       );
     }
