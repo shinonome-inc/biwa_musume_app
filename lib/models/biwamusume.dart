@@ -10,5 +10,5 @@ class Biwamusume with _$Biwamusume {
 }
 
 extension BiwamusumeExtension on Biwamusume {
-  String get imagePath => 'assets/images/$name.png';
+  String get imagePath => 'assets/biwamusume/$name.png';
 }
