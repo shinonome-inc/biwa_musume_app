@@ -25,7 +25,18 @@ class TopPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Image.asset('assets/logo.png'),
-              const Text("全5問", style: TextStyle(fontSize: 20)),
+              const Text(
+                "全5問",
+                style: TextStyle(
+                  fontSize: 20,
+                  shadows: <Shadow>[
+                    Shadow(
+                      color: Colors.white,
+                      blurRadius: 4.0,
+                    ),
+                  ],
+                ),
+              ),
               const SizedBox(height: 4.0),
               GradientButton(
                 buttonText: '',
