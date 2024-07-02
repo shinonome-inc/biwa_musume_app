@@ -15,6 +15,7 @@ class TopPage extends StatelessWidget {
           image: DecorationImage(
             // 画像がはみ出るが、縦横比を保ったまま画面いっぱいに画像を表示
             fit: BoxFit.cover,
+            alignment: Alignment.topCenter,
             image: AssetImage('assets/top_bg.png'),
           ),
         ),
