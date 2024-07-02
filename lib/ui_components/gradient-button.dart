@@ -39,8 +39,6 @@ class GradientButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(44),
           ),
-          primary: Colors.transparent,
-          onPrimary: Colors.transparent,
           shadowColor: Colors.transparent,
         ),
         child: const Text(
